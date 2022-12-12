@@ -1,4 +1,4 @@
-package abolfazli.mahdi.ginitask.di
+package abolfazli.mahdi.ginitask.core.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

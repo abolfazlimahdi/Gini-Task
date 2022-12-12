@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_2x"
+    >
+
+    <TextView
+        android:id="@+id/tv_bankAccountLabel_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:text="@string/label_bank_account"
+        />
+
+    <TextView
+        android:id="@+id/tv_bankAccount_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_bankAccountLabel_invoiceItem"
+        tools:text="9387598347587"
+        />
+
+    <TextView
+        android:id="@+id/tv_amountLabel_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        android:layout_marginTop="@dimen/spacing_2x"
+        app:layout_constraintTop_toBottomOf="@id/tv_bankAccountLabel_invoiceItem"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:text="@string/label_amount"/>
+
+    <TextView
+        android:id="@+id/tv_amount_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        android:layout_marginTop="@dimen/spacing_2x"
+        app:layout_constraintTop_toBottomOf="@id/tv_bankAccountLabel_invoiceItem"
+        app:layout_constraintStart_toEndOf="@id/tv_bankAccountLabel_invoiceItem"
+        tools:text="78465"
+        />
+
+    <TextView
+        android:id="@+id/tv_bicLabel_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        android:layout_marginTop="@dimen/spacing_2x"
+        app:layout_constraintTop_toBottomOf="@id/tv_amountLabel_invoiceItem"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:text="@string/label_bic"/>
+
+    <TextView
+        android:id="@+id/tv_bic_invoiceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4x"
+        android:layout_marginTop="@dimen/spacing_2x"
+        app:layout_constraintTop_toBottomOf="@id/tv_amountLabel_invoiceItem"
+        app:layout_constraintStart_toEndOf="@id/tv_bankAccountLabel_invoiceItem"
+        tools:text="sljkf049385jikd"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Gini Task</string>
+    <string name="capture">Capture</string>
+    <string name="label_bank_account">Bank Account</string>
+    <string name="label_details_activity">Details Activity</string>
+    <string name="label_amount">Amount</string>
+    <string name="label_bic">BIC</string>
 </resources>

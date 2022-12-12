@@ -4,6 +4,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def apikeyPropertiesFile = rootProject.file("local.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     namespace 'abolfazli.mahdi.ginitask'
     compileSdk 33
@@ -16,6 +20,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "gini_api_client_id", apikeyProperties['clientId'])
+        buildConfigField("String", "gini_api_client_secret", apikeyProperties['clientSecret'])
     }
 
     buildTypes {
@@ -57,24 +64,6 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     testImplementation "androidx.room:room-testing:$room_version"
 
-    // Retrofit
-    def retrofit_version = "2.9.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-
-    // Okhttp
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.1"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
-
-    // Moshi Kotlin
-    def moshi_version = "1.13.0"
-    implementation "com.squareup.moshi:moshi:$moshi_version"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
-    def kotshi_version = "2.4.0"
-    implementation "se.ansman.kotshi:api:$kotshi_version"
-    kapt "se.ansman.kotshi:compiler:$kotshi_version"
-
     // Dagger
     def dagger_version = "2.44"
     implementation "com.google.dagger:dagger-android:$dagger_version"
@@ -90,5 +79,8 @@ dependencies {
     // KTX
     implementation "androidx.core:core-ktx:1.9.0"
     implementation "androidx.fragment:fragment-ktx:1.5.4"
+
+    // Gini Bank SDK
+    implementation 'net.gini.android:gini-bank-sdk:2.0.1'
 
 }
